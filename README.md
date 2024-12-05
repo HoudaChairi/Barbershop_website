@@ -85,7 +85,7 @@ cd Barbershop_website
    python manage.py runserver
    ```
 
-The backend server should now be running, and you can access it at `http://127.0.0.1:8000`.
+The backend server should now be running.
 
 ---
 
