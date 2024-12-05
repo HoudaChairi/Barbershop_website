@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Your Bookings - BarberBook</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <style>
+        .bookings-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .booking-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .booking-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .booking-details {
+            margin: 1rem 0;
+        }
+
+        .booking-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-edit {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-cancel {
+            background: #f44336;
+            color: white;
+        }
+
+        .email-form {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .email-form input {
+            padding: 0.5rem;
+            margin-right: 1rem;
+            width: 300px;
+        }
+
+        .booking-form {
+            display: none;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .booking-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .time-slot {
+            padding: 0.5rem;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .time-slot.selected {
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">BarberBook</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="bookings.html" class="active">My Bookings</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="bookings-container">
+            <h2>Manage Your Bookings</h2>
+            
+            <div class="email-form">
+                <input type="email" id="email-search" placeholder="Enter your email to view bookings">
+                <button class="btn btn-edit" onclick="loadBookings()">Search</button>
+            </div>
+
+            <div id="bookings-list"></div>
+
+            <div id="edit-form" class="booking-form">
+                <h3>Edit Booking</h3>
+                <div class="form-group">
+                    <label for="edit-service">Service</label>
+                    <select id="edit-service" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-date">Date</label>
+                    <input type="date" id="edit-date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-time-slots">Time</label>
+                    <div id="edit-time-slots" class="time-slots"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-name">Name</label>
+                    <input type="text" id="edit-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-phone">Phone</label>
+                    <input type="tel" id="edit-phone" required>
+                </div>
+
+                <div class="booking-actions">
+                    <button class="btn btn-edit" onclick="updateBooking()">Save Changes</button>
+                    <button class="btn btn-cancel" onclick="cancelEdit()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="notification" class="notification"></div>
+
+    <script type="module" src="js/bookings.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberBook - Modern Booking System</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">BarberBook</div>
+            <div class="nav-links">
+                <a href="#booking">Book Now</a>
+                <a href="bookings.html">My Bookings</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="services" class="services-section">
+            <h2>Our Services</h2>
+            <div class="services-grid" id="services-grid"></div>
+        </section>
+
+        <section id="booking" class="booking-section">
+            <h2>Book Your Appointment</h2>
+            <div class="booking-container">
+                <div class="booking-form">
+                    <div class="form-group">
+                        <label for="service">Select Service</label>
+                        <select id="service" required>
+                            <option value="">Choose a service...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Select Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Available Times</label>
+                        <div id="time-slots" class="time-slots"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <button type="button" id="book-btn" class="book-btn">Book Appointment</button>
+                </div>
+
+                <div class="booking-summary" id="booking-summary">
+                    <h3>Booking Summary</h3>
+                    <div id="summary-content"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 BarberBook. All rights reserved.</p>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
