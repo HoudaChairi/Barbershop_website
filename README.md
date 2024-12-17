@@ -124,3 +124,10 @@ Now that both the frontend and backend servers are running, open a browser and v
 ```url
 http://127.0.0.1:5000/
 ```
+
+<img width="1838" alt="image_20241217_220922dbab0d5b-a97c-41b7-ada8-3140239bb3d1" src="https://github.com/user-attachments/assets/a600826e-ce51-4478-a129-ed636d968100" />
+
+<img width="1621" alt="image_20241217_220931e94d6a62-448b-4cae-bf55-a0952526fa74" src="https://github.com/user-attachments/assets/444e6ddf-a8d2-4d6e-9e29-c748aea283ff" />
+
+<img width="1621" alt="image_20241217_2209379de6cb03-582f-46a5-af61-be8f2d0d5d31" src="https://github.com/user-attachments/assets/886cbd6b-5d68-424c-a406-5a78ab2cb8dc" />
+
